@@ -52,7 +52,7 @@ class Scene:
 
 class RayScene(Scene):
     def __init__(self, ctx, camera, width, height):
-        super()._init_(ctx, camera)
+        super().__init__(ctx, camera)
         self.raytracer = RayTracer(camera, width, height)
     
     def start(self):
