@@ -96,20 +96,12 @@ class RaySceneGPU(Scene):
         self._update_matrix()
         self._matrix_to_ssbbo()
 
-    def run(self):
-        groups_x = (self.width + 15) // 16
-        groups_y = (self.height + 15) // 16
-
-        self.compute_shader.run(groups_x=groups_x, groups_y=groups_y, groups_z=1)
-        self.ctx.clear(0.0, 0.0, 0.0, 1.0)
-        self.output_graphics.render({"u_texture": self.texture_unit})
-
     def render(self):
         self.time = 0.01
         for obj in self.objects:
             if obj.animated:
                 obj.rotation += glm.vec3(0.8, 0.6, 0.4)
-                obj.position.x = math.sin(self.time) * 0.01
+                obj.position.x += math.sin(self.time) * 0.01
 
         if (self.raytracer is not None):
             self._update_matrix()
