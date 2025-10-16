@@ -26,7 +26,7 @@ class Hit:
     def check_hit(self, origin, direction):
         raise NotImplementedError("Subclasses should implement this method.")
 
-class HitBox(Hit):    
+class HitBox(Hit): # Detecta si un rayo colisiona o no con el objeto    
     def __init__(self, get_model_matrix, hittable = True):
         super().__init__(get_model_matrix, hittable)
 

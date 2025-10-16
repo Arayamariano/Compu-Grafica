@@ -24,7 +24,7 @@ class Camera:
     def get_perspective_matrix(self):
         return glm.perspective(glm.radians(self.fov), self.aspect, self.near, self.far)
     
-    def get_view_matrix(self):
+    def get_view_matrix(self): # Matriz de transformacion de vista
         return glm.lookAt(self.position, self.target, self.up)
     
     def get_inverse_view_matrix(self):

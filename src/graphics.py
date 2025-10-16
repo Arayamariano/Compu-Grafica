@@ -30,7 +30,7 @@ class Graphics:
         textures = {}
         for texture in textures_data:
             if texture.image_data:
-                texture_ctx = self.__ctx.texture(texture.size, texture.channels_amount, texture.image_data.tobytes())
+                texture_ctx = self.__ctx.texture(texture.size, texture.channels_amount, texture.get_bytes())
                 if texture.build_mipmaps:
                     texture_ctx.build_mipmaps()
                 texture_ctx.repeat_x = texture.repeat_x

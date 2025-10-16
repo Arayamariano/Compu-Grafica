@@ -1,8 +1,8 @@
 import numpy as np
 
 class ImageData:
-    def __init__(self, height, width, channels, colors=(0,0,0)):
-        self.data = np.full((height, width, channels), colors, dtype=np.uint8)
+    def __init__(self, height, width, channels, color =(0,0,0)):
+        self.data = np.full((height, width, channels), color , dtype=np.uint8)
 
     def set_pixel(self, x, y, color):
         self.data[y, x] = color
@@ -12,12 +12,11 @@ class ImageData:
     
 class Texture:
     def __init__(self, name="u_texture", width=1, height=1, channels_amount=3, 
-                 image_data: ImageData=None, color=(0, 0, 0), repeat_x=False, repeat_y=False, 
+                 image_data:ImageData = None, color=(0, 0, 0), repeat_x=False, repeat_y=False, 
                  build_mipmaps=False):
         self.name = name
         self.size = (width, height)
         self.channels_amount = channels_amount
-        self._image_data = image_data
         self.repeat_x = repeat_x
         self.repeat_y = repeat_y
         self.build_mipmaps = build_mipmaps
@@ -40,5 +39,5 @@ class Texture:
     def set_pixel(self, x, y, color):
         self._image_data.set_pixel(x, y, color)
     
-    def get_data(self):
+    def get_bytes(self):
         return self._image_data.tobytes()

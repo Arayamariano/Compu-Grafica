@@ -48,7 +48,7 @@ class RayTracerGPU:
 
         self.compute_shader.set_uniform('cameraPosition', self.camera.position)
         self.compute_shader.set_uniform('inverseViewMatrix', self.camera.get_inverse_view_matrix())
-        self.compute_shader.set_uniform('fieldOView', self.camera.fov)
+        self.compute_shader.set_uniform('fieldOfView', self.camera.fov)
 
     def run(self):
         groups_x = (self.width + 15) // 16

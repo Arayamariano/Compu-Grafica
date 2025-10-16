@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 WIDTH, HEIGHT = 800, 600
-SCENE_TYPE = "normal"  # Opciones: "normal", "cpu", "gpu"
+SCENE_TYPE = "gpu"  # Opciones: "normal", "cpu", "gpu"
 
 scene_configs = {
     "normal": {

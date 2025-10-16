@@ -16,7 +16,6 @@ class Vertex:
     def array(self):
         return self.__array
     
-
 class VertexLayout:
     def __init__(self):
         self.__attributes = []
@@ -27,7 +26,6 @@ class VertexLayout:
     def get_attributes(self):
         return self.__attributes
     
-
 class Model:
     def __init__(self, vertices=None, indices=None, colors=None, normals=None, texcoords=None):
         self.indices = indices

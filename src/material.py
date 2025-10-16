@@ -1,5 +1,5 @@
 from texture import Texture
-class Material:
+class Material: # Relaciona un shader con diferentes texturas
     def __init__(self, shader_program, textures_data=[]):
         self.__shader_program = shader_program
         self.__textures_data = textures_data
